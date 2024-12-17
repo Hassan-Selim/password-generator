@@ -1,0 +1,300 @@
+/* =================== RESET =================== */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--white);
+  font-family: "Cairo", sans-serif;
+}
+:root {
+  --black: #010e1a;
+  --dark-gray: #041c2b;
+  --light-gray: #162a36;
+  --red: red;
+  --green: #a4ffaf;
+  --orange: #f6cd6f;
+  --white: #ffffff;
+}
+body {
+  background-color: var(--black);
+}
+.container {
+  max-width: 500px;
+  margin: auto;
+  height: 100vh;
+  /* border: 2px solid salmon; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* =================== PASSWORD SCREEN =================== */
+.password-screen {
+  background-color: var(--dark-gray);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+.password-screen .password {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.password-screen .fa-copy {
+  color: var(--green);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.password-screen .fa-copy:hover{
+  transform: scale(1.1);
+}
+.password-screen .fa-copy:active {
+  transform: scale(0.9);
+}
+/* =================== Dashboard =================== */
+.dashboard {
+  background-color: var(--light-gray);
+  min-height: 470px;
+  padding: 20px 40px;
+  transition: 0.5s ease-in-out;
+}
+/* 1 => character length */
+.dashboard .character-length > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.dashboard .character-length > div span:last-child {
+  color: var(--green);
+  font-size: 2.3rem;
+  font-weight: 600;
+}
+.dashboard input[type="range"] {
+  width: 100%;
+}
+.dashboard input[type="range"]:hover {
+  cursor: grab;
+}
+.dashboard input[type="range"]:active {
+  cursor: grabbing;
+}
+.dashboard input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  background: #555555;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.dashboard input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: 0.2s;
+  background: var(--green);
+}
+.dashboard input[type="range"]:active::-webkit-slider-thumb {
+  box-shadow: 0px 0px 30px 0px var(--green);
+}
+.dashboard input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--green);
+  transition: 0.2s;
+}
+.dashboard input[type="range"]:active::-moz-range-thumb {
+  box-shadow: 0px 0px 30px 0px var(--green);
+}
+/* 2 => properties & options */
+.dashboard .properties {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dashboard .option {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  font-size: 17px;
+  user-select: none;
+}
+.dashboard .option span {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  word-spacing: 2px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.dashboard .option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.dashboard .checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+.dashboard .option input:checked ~ span {
+  opacity: 1;
+}
+.dashboard .option input:checked ~ .checkmark {
+  background-color: #47da99;
+  animation: pop 0.5s;
+  animation-direction: alternate;
+}
+.dashboard .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.dashboard .option input:checked ~ .checkmark:after {
+  display: block;
+}
+.dashboard .option .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+/* 3 => Strength */
+.dashboard .strength {
+  background-color: var(--dark-gray);
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+.dashboard .strength div:first-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.dashboard .strength .level {
+  display: flex;
+}
+.dashboard .strength .level h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.dashboard .strength .level #blocks > span {
+  display: inline-block;
+  width: 15px;
+  height: 95%;
+  border: 1px solid var(--white);
+  margin: 0px 1px;
+}
+/* 4 => Generate */
+.generate-btn {
+  background-color: #ffae00;
+  color: var(--black);
+  width: 100%;
+  outline: none;
+  border: none;
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.generate-btn:hover {
+  letter-spacing: 4px;
+}
+.generate-btn:active{
+  transform: scale(0.9);
+}
+/* Styles for js */
+#blocks.easy span:first-child {
+  background-color: var(--red);
+  border-color: var(--red) !important;
+}
+#blocks.medium span:not(:last-child) {
+  background-color: var(--orange);
+  border-color: var(--orange) !important;
+}
+#blocks.hard span {
+  background-color: var(--green);
+  border-color: var(--green) !important;
+}
+.welcome{
+  z-index: 100;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--black);
+  height: 100dvh;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+  
+}
+@media  (max-width:950px){
+  .dashboard{
+    max-width: 350px;
+    
+  }
+}

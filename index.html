@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <!-- Font Awsem -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="assets/Logo2.png" rel="icon" />
+  </head>
+  <body id="body" >
+    <div class="welcome " >
+      <h1 class="animate__animated animate__zoomIn" >password generator</h1>
+      <h1 class="animate__animated animate__zoomIn" >by hassan selim</h1>
+      
+    </div>
+    <div class="container">
+      
+      <!-- => DASHBOARD <= -->
+      <div class="dashboard">
+        <!-- => PASSWORD SCREEN <= -->
+      <div class="password-screen">
+        <div class="password">Pa$$w0Rd</div>
+        <i class="fa-regular fa-copy"></i>
+      </div>
+        <!-- Length -->
+        <div class="character-length">
+          <div>
+            <span>Character Length</span><span id="pass-length">8</span>
+          </div>
+          <input type="range" size="16" max="16" min="1" value="8" />
+        </div>
+        <!-- Options -->
+        <div class="properties">
+          <label class="option">
+            <input type="checkbox" checked id="uppercase" />
+            <div class="checkmark"></div>
+            <span>Include Uppercase Letters</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" checked id="lowercase" />
+            <div class="checkmark"></div>
+            <span>Include Lowercase Letters</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" checked id="numbers" />
+            <div class="checkmark"></div>
+            <span>Include Numbers</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" id="symbols" />
+            <div class="checkmark"></div>
+            <span>Include Symbols</span>
+          </label>
+        </div>
+        <!-- Strength -->
+        <div class="strength">
+          <div>Strength</div>
+          <div class="level">
+            <h1>MEDIUM</h1>
+            <div class="medium" id="blocks">
+              <span ></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <!-- Generate -->
+        <button class="generate-btn">Generate</button>
+      </div>
+    </div>
+    <!-- Main Script -->
+    <script src="./scripts.js"></script>
+  </body>
+</html>
