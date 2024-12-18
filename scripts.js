@@ -82,5 +82,5 @@ function checkStrength() {
 copy.addEventListener("click", function () {
   const text = passwordHtml.innerHTML;
   navigator.clipboard.writeText(text);
-  window.alert("Password C");
+  window.alert("Password Copid");
 });
