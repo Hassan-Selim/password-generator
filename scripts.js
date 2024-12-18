@@ -82,13 +82,5 @@ function checkStrength() {
 copy.addEventListener("click", function () {
   const text = passwordHtml.innerHTML;
   navigator.clipboard.writeText(text);
-  window.alert("Password Cpoid");
+  window.alert("Password C");
 });
-
-/* 
-window.addEventListener(
-  "load",
-  setTimeout(function () {
-    welcomePage.style.display = "flex";
-  },2000));
- */
